@@ -1,1 +1,36 @@
+@import 'themes';
+
+@import '~@nebular/theme/styles/globals';
+
+/*Import fonts*/
+@font-face {
+  font-family: 'OpenSans';
+  src: url("assets/OpenSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("assets/OpenSans-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@include nb-install() {
+  @include nb-theme-global();
+};
 /* You can add global styles to this file, and also import other style files */
+
+html * {
+  font-family: 'OpenSans';
+}
+
+.nb-theme-default 
+{
+  --header-height: 3.75rem;
+  --header-shadow: 0px 4px 8px 0px rgba(44, 51, 73, 0.1);
+  
+  --sidebar-width: 4rem;
+  --sidebar-padding: 0rem;
+}
