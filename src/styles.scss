@@ -22,10 +22,6 @@
 };
 /* You can add global styles to this file, and also import other style files */
 
-html * {
-  font-family: 'OpenSans';
-}
-
 .nb-theme-default 
 {
   --header-height: 3.75rem;
@@ -33,4 +29,6 @@ html * {
   
   --sidebar-width: 4rem;
   --sidebar-padding: 0rem;
+
+  --text-heading-6-font-family: 'OpenSans';
 }

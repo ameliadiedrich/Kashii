@@ -7,12 +7,28 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavrailButtonComponent implements OnInit {
 
-  @Input() iconName: string = "";
-  @Input() mode: string = "";
+  @Input() mode: String = "";
+  @Input() icon: String = "";
+  @Input() activeIcon: String = "";
+  currentIcon: String = this.icon;
+
+  toggle: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.currentIcon = this.icon;
+  }
+
+  setToggle(): void {
+    if(this.activeIcon) {
+      if(this.currentIcon == this.icon) {
+        this.currentIcon = this.activeIcon;
+      }
+      else {
+        this.currentIcon = this.icon;
+      }
+    }
   }
 
 }
