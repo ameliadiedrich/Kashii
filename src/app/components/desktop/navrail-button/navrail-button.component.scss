@@ -1,13 +1,19 @@
-nb-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
 button {
     background-color: white;
     border: none;
     width: 100%;
     height: 4rem;
+
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+}
+
+.is-active {
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    background-color: rgba(51, 102, 255, 0.08);
 }
 
 .primary {
@@ -16,4 +22,21 @@ button {
     border: none;
     width: 100%;
     height: 4rem;
+}
+
+div {
+    position: absolute;
+    width: 0.25rem;
+    height: 4rem;
+    align-self: flex-start;
+    background-color: #6202EE;
+    margin: 0;
+    padding: 0; 
+}
+
+nb-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    align-self: center;
+    margin: auto;
 }

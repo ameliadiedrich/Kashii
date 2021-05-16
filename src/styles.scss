@@ -22,13 +22,26 @@
 };
 /* You can add global styles to this file, and also import other style files */
 
-.nb-theme-default 
-{
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.nb-theme-default {
   --header-height: 3.75rem;
   --header-shadow: 0px 4px 8px 0px rgba(44, 51, 73, 0.1);
   
   --sidebar-width: 4rem;
+  --sidebar-height: 100vh;
   --sidebar-padding: 0rem;
+  --sidebar-shadow: 0px 4px 8px 0px rgba(44, 51, 73, 0.1);
 
+  --layout-min-width: 100vw;
+  --layout-min-height: 100%;
+  --layout-background-color: white;
+  --layout-padding: 0.25rem calc(2.25rem + var(--sidebar-width)) 0.75rem;
+
+  --text-heading-3-font-family: 'OpenSans';
   --text-heading-6-font-family: 'OpenSans';
 }
