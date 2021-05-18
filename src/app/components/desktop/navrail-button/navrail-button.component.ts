@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router, Event } from '@angular/router';
 
 @Component({
   selector: 'app-navrail-button',
@@ -20,24 +20,16 @@ export class NavrailButtonComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentIcon = this.icon;
-  }
-
-  setToggle(): void {
-    if(this.router.isActive(this.route, true)){
-      this.currentIcon = this.activeIcon;
-    }
-    else {
-      this.currentIcon = this.icon;
-    }
-    /*this.active = !this.active;
-    if(this.activeIcon) {
-      if(this.currentIcon == this.icon) {
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd && this.router.isActive(this.route, true) && this.activeIcon) {
+        console.log("Navigation end");
         this.currentIcon = this.activeIcon;
+        this.active = true;
       }
-      else {
+      else if(!this.router.isActive(this.route, true)) {
         this.currentIcon = this.icon;
-      }*/
-    
+        this.active = false;
+      }
+    });
   }
-
 }
